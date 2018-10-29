@@ -1,0 +1,211 @@
+@charset "utf-8";
+.details-head{
+    padding-top: 40px;
+    padding-bottom: 35px;
+    background-color: #fafafa;
+}
+.title-wrapper{
+    width: 1140px;
+    margin: 0 auto;
+}
+.text-middle {
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 18px;
+}
+.text-center {
+    text-align: center;
+}
+
+.layui-pull-left {
+    float: left;
+}
+.layui-pull-right {
+    float: right;
+}
+.operation,.personalCenter{
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+.title{
+    width: 100% !important;
+    height: 50px;
+    background-color:rgba(0,0,0,.8) ;
+}
+.clearfix{
+    clear: both;
+}
+.details-head .left-con .house-title {
+    max-width: 88%;
+    font-weight: normal;
+    color: #1b1b1b;
+    font-size: 30px;
+}
+.details-head .left-con .tags {
+    font-size: 14px;
+    color: #aeaeae;
+    overflow: hidden;
+    clear: both;
+}
+.details-head .left-con .tags span {
+    float: left;
+    display: block;
+    max-width: 570px;
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+.layui-tab-brief ul{
+    width: 100%;
+    margin:0px;
+    padding: 0px;
+}
+.layui-tab-brief ul li{
+    width: 175px;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+.wrapper{
+    height: auto;
+    overflow: hidden;
+}
+.wrapper .breadcrumb{
+    margin: 20px 0px;
+}
+.carousel-image{
+    width: 660px;
+}
+.details-info{
+    /*width: 480px;*/
+    padding: 10px 50px;
+    box-sizing: border-box;
+}
+.details-info .show-price{
+    color: #ffc601;
+    text-align: left;
+}
+.details-info .show-price  {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'dinot-bold';
+}
+.show-price .sale-unit {
+    margin-left: 1px;
+    font-size: 14px;
+}
+.area {
+    color: #c9c9c9;
+    font-size: 14px;
+    padding-right: 10px;
+}
+.show-house-name{
+    width: 100%;
+    height: 120px;
+}
+.show-house-name .field{
+    color: #aeaeae;
+    display: block;
+    width: 95px;
+    float: left;
+}
+.show-house-name .name{
+    display: inline-block;
+}
+.show-house-name span{
+    line-height: 30px;
+}
+.house-model{
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+}
+.house-model ul li{
+    width: 33.3%;
+    height: 100px;
+    text-align: center;
+    padding-top: 20px;
+    box-sizing: border-box;
+    float: left;
+}
+.house-model ul li span{
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+}
+.house-model ul li p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    padding-bottom: 7px;
+}
+.order-btn-container{
+    width: 100%;
+    height: 100px;
+}
+.order-btn-container .order-btn{
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    background-color: #ffc601;
+    border: none;
+    outline: none;
+    color: #fff;
+    margin-left:90px ;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.anchor-title{
+    width: 740px;
+    height: 100px;
+    clear: both;
+    margin-top: 40px;
+    line-height: 120px;
+    font-size: 20px;
+    color: #6e6e6e;
+    border-bottom: 1px solid #e2e2e2;
+}
+.household-appliances{
+    width: 740px;
+    height: 240px;
+    border-bottom: 1px solid #e2e2e2;
+}
+.household-appliances ul li {
+    display: block;
+    width: 88px;
+    margin-left: 15px;
+    padding-top: 10px;
+    float: left;
+    text-align: center;
+}
+.household-appliances ul li span {
+    display: block;
+    color: #d9d9d9;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 34px;
+}
+.household-appliances ul li i {
+    width: 49px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 43px;
+    color: #757575;
+    display: block;
+    margin: 0 auto;
+}
+footer{
+    width: 100%;
+    height: 60px;
+    margin-top: 60px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 60px;
+}

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.house.dao.HouseMapper">
+	<resultMap type="com.house.entity.House" id="BasicMap">
+		<id column="h_id" jdbcType="INTEGER" property="hID" />
+		<result column="house_desc" jdbcType="VARCHAR" property="houseDesc"/>
+		<result column="house_model" jdbcType="VARCHAR" property="houseModel"/>
+		<result column="house_area" jdbcType="VARCHAR" property="houseArea"/>
+		<result column="house_floor" jdbcType="VARCHAR" property="houseFloor"/>
+		<result column="house_type" jdbcType="VARCHAR" property="houseType"/>
+		<result column="house_price" jdbcType="VARCHAR" property="housePrice"/>
+		<result column="house_address" jdbcType="VARCHAR" property="houseAddress"/>
+		<result column="house_image" jdbcType="VARCHAR" property="houseImage"/>
+		<result column="community_name" jdbcType="VARCHAR" property="communityName"/>
+		<result column="house_linkman" jdbcType="VARCHAR" property="houseLinkMan"/>
+		<result column="house_oriented" jdbcType="VARCHAR" property="houseOriented"/>
+		<result column="house_detailes_img" jdbcType="VARCHAR" property="houseDetailsImg"/>
+		<result column="publisher" jdbcType="VARCHAR" property="publisher"/>
+		<result column="publish_time" jdbcType="VARCHAR" property="publishTime"/>
+	</resultMap>
+	
+	<!-- 首页信息查询 -->
+	<select id="findHomeInfo" resultMap="BasicMap">
+		SELECT
+			h_id,
+			house_desc,
+			house_model,
+			house_area,
+			house_type,
+			house_price,
+			house_floor,
+			house_address,
+			house_image
+		FROM
+			t_house
+	</select>
+	
+	<!-- 房屋详细信息 -->
+	<select id="findHouseDetailsById" parameterType="int" resultMap="BasicMap">
+		SELECT
+			h_id,
+			house_desc,
+			house_price,
+			house_type,
+			house_area,
+			house_floor,
+			community_name,
+			house_address,
+			house_linkman,
+			house_model,
+			house_area,
+			house_oriented,
+			house_detailes_img
+		FROM
+			t_house
+		WHERE
+			h_id=#{id}
+	</select>
+	
+	<insert id="addNewHouse" parameterType="com.house.entity.House">
+		insert into 
+			t_house 
+		values
+		(	0,
+			#{houseDesc},
+			#{houseModel},
+			#{houseArea},
+			#{houseFloor},
+			#{houseType},
+			#{housePrice},
+			#{houseAddress},
+			#{houseImage},
+			#{communityName},
+			#{houseLinkMan},
+			#{houseOriented},
+			#{houseDetailsImg},
+			#{publisher},
+			NOW()
+		)
+	</insert>
+	
+	<!-- 查找用户发布的房源信息 -->
+	<select id="findHouseByUser" parameterType="com.house.entity.Page" resultMap="BasicMap">
+		select * from t_house where publisher = #{publisher} limit #{page},#{limit}
+	</select>
+	
+	<!-- 删除用户发布的房源信息 -->
+	<delete id="deleteUserHouse" parameterType="int">
+		delete from t_house where h_id=#{hID}
+	</delete>
+	<!-- 修改用户发布的房源信息 -->
+	<update id="updateHouse" parameterType="com.house.entity.House">
+		UPDATE t_house
+		SET 
+			house_desc = #{houseDesc},
+			house_model = #{houseModel},
+			house_area = #{houseArea},
+			house_floor = #{houseFloor},
+			house_type = #{houseType},
+			house_price = #{housePrice},
+			house_address = #{houseAddress},
+			house_oriented = #{houseOriented},
+			house_linkman = #{houseLinkMan},
+			community_name = #{communityName}
+		WHERE
+			h_id = #{hID}
+	</update>
+	
+	<!-- 条件搜索 -->
+	<select id="findHouseByLike" parameterType="string" resultMap="BasicMap">
+		SELECT
+			*
+		FROM
+			t_house h
+		WHERE
+			CONCAT(
+				h.community_name,
+				h.house_desc,
+				h.house_model
+			) LIKE CONCAT("%", #{keywords}, "%")
+	</select>
+	
+	<select id="findHouseOrderByDesc" resultMap="BasicMap">
+		SELECT * FROM t_house h ORDER BY house_price DESC
+	</select>
+	
+	<select id="findHouseOrderByAsc" resultMap="BasicMap">
+		SELECT * FROM t_house h ORDER BY house_price ASC
+	</select>
+</mapper>

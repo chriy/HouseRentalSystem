@@ -1,0 +1,195 @@
+@charset "utf-8";
+.layui-header{
+    background-color:rgba(0,0,0,.6) ;
+}
+.text-middle {
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 18px;
+}
+.text-center {
+    text-align: center;
+}
+
+.layui-pull-left {
+    float: left;
+}
+.layui-pull-right {
+    float: right;
+}
+.layui-pull-center {
+    margin: 0px auto;
+}
+#bg-item{
+    position: relative;
+}
+.title{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100% !important;
+    height: 50px;
+    background-color:rgba(0,0,0,.6) ;
+}
+.operation,.personalCenter{
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+.layui-tab-brief ul{
+    width: 100%;
+    margin:0px;
+    padding: 0px;
+}
+.layui-tab-brief ul li{
+    width: 175px;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+/*搜索*/
+.seach-input{
+    position: absolute;
+    top: 160px;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    z-index: 10000;
+    padding: 0px 25px;
+    overflow: hidden;
+}
+.seach-input .input{
+    width: 85%;
+    height: 50px;
+}
+.seach-input .input input{
+    width: 100%;
+    height: 50px;
+    border: none;
+    padding: 0px 20px;
+    border-radius: 5px 0px 0px 5px;
+    background: rgba(255,255,255,.8);
+}
+.seach-input .button{
+    width: 120px;
+    height: 50px;
+}
+.seach-input .btn{
+    width: 100%;
+    height: 100%;
+    background: #ffc601;
+    border: none;
+    color: #fff;
+    border-radius: 0px 5px 5px 0px;
+    cursor: pointer;
+}
+/*内容区*/
+.list_control_bar {
+    height: 50px;
+    border-bottom: 2px solid #ffc601;
+    margin: 40px auto;
+    padding-left: 0px;
+}
+.list_title{
+    width: 115px;
+    height: 50px;
+    background-color: #ffc601;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+}
+.list_more ul li{
+    float: left;
+    width: 100px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    font-family: '微软雅黑';
+}
+.click-this a{
+    color: #ffc601;
+}
+
+/*房屋详细信息*/
+.house-detail{
+    width: 1140px;
+    height: auto;
+}
+.house-detail ul li{
+    width: 100%;
+    height: 180px;
+    position: relative;
+    margin-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #eee;
+}
+.show-image{
+    position: relative;
+    float: left;
+}
+.show-details{
+    width: 628px!important;
+    float: left;
+    margin-left: 31px;
+    margin-top: -5px;
+}
+.house-title{
+    position: relative;
+    margin-top: -2px;
+    width: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+.house-title a{
+    float: left;
+    max-width: 512px;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    font-size: 24px;
+    font-weight: 700;
+}
+.house-about,.house-address{
+    font-size: 14px;
+    color: #1b1b1b!important;
+    margin-top: 28px;
+}
+.flag-line{
+    margin: 0px 10px;
+}
+.show-price{
+    position: absolute;
+    top: 42px;
+    right: 0;
+    float: right;
+    color: #ffc601;
+    text-align: right;
+}
+.show-price .sale-price {
+    position: relative;
+    top: 2px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'dinot-bold';
+}
+.show-price .sale-unit {
+    margin-left: 1px;
+    font-size: 14px;
+}
+footer{
+    width: 100%;
+    height: 60px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 60px;
+}

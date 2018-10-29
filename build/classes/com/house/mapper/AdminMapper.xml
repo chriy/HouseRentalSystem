@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.house.dao.AdminMapper">
+	<resultMap type="com.house.entity.Admin" id="BasicMap">
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="username" jdbcType="VARCHAR" property="username"/>
+		<result column="userpwd" jdbcType="VARCHAR" property="userpwd"/>
+	</resultMap>
+	
+	<resultMap type="com.house.entity.Users" id="AllUserMap">
+		<id column="u_id" jdbcType="INTEGER" property="uID" />
+		<result column="u_name" jdbcType="VARCHAR" property="uName"/>
+		<result column="u_password" jdbcType="VARCHAR" property="uPassword"/>
+		<result column="u_phone_number" jdbcType="VARCHAR" property="uPhoneNumber"/>
+		<result column="u_nickname" jdbcType="VARCHAR" property="uNickName"/>
+	</resultMap>
+	
+	<resultMap type="com.house.entity.House" id="AllHouseMap">
+		<id column="h_id" jdbcType="INTEGER" property="hID" />
+		<result column="house_desc" jdbcType="VARCHAR" property="houseDesc"/>
+		<result column="house_model" jdbcType="VARCHAR" property="houseModel"/>
+		<result column="house_area" jdbcType="VARCHAR" property="houseArea"/>
+		<result column="house_floor" jdbcType="VARCHAR" property="houseFloor"/>
+		<result column="house_type" jdbcType="VARCHAR" property="houseType"/>
+		<result column="house_price" jdbcType="VARCHAR" property="housePrice"/>
+		<result column="house_address" jdbcType="VARCHAR" property="houseAddress"/>
+		<result column="house_image" jdbcType="VARCHAR" property="houseImage"/>
+		<result column="community_name" jdbcType="VARCHAR" property="communityName"/>
+		<result column="house_linkman" jdbcType="VARCHAR" property="houseLinkMan"/>
+		<result column="house_oriented" jdbcType="VARCHAR" property="houseOriented"/>
+		<result column="house_detailes_img" jdbcType="VARCHAR" property="houseDetailsImg"/>
+		<result column="publisher" jdbcType="VARCHAR" property="publisher"/>
+		<result column="publish_time" jdbcType="VARCHAR" property="publishTime"/>
+	</resultMap>
+	
+	<!-- 管理员登录 -->
+	<select id="adminAccess" resultMap="BasicMap" parameterType="com.house.entity.Admin">
+		select * from t_admin where username=#{username} and userpwd=#{userpwd}
+	</select>
+	
+	<!-- 查询所有用户 -->
+	<select id="findAllUser" resultMap="AllUserMap">
+		select * from t_users 
+	</select>
+	
+	<select id="findAllHouse" resultMap="AllHouseMap" parameterType="com.house.entity.Page">
+		select * from t_house limit #{page},#{limit}
+	</select>
+	
+	<delete id="deleteHouse" parameterType="int">
+		delete from t_house where h_id=#{hID}
+	</delete>
+	
+	<select id="findUserById" parameterType="int" resultMap="AllUserMap">
+		select * from t_users where u_id = #{uID}
+	</select>
+	
+	<update id="updateUser" parameterType="com.house.entity.Users">
+		update t_users set
+			u_name = #{uName},
+			u_password = #{uPassword},
+			u_phone_number=#{uPhoneNumber},
+			u_nickname = #{uNickName}
+		where u_id=#{uID}
+	</update>
+	
+	<delete id="deleteUser" parameterType="int">
+		delete from t_users where u_id=#{uID}
+	</delete>
+	
+	<select id="checkAdminPwd" parameterType="com.house.entity.Admin" resultMap="BasicMap">
+		select * from t_admin where userpwd=#{userpwd} and id = #{id}
+	</select>
+	
+	<update id="updateAdminPwd" parameterType="com.house.entity.Admin">
+		update t_admin set
+			userpwd=#{userpwd}
+		where id=#{id}
+	</update>
+</mapper>

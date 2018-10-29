@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.house.dao.OrderMapper">
+	<resultMap type="com.house.entity.Order" id="BasicMap">
+		<id column="o_id" jdbcType="INTEGER" property="oID" />
+		<result column="h_id" jdbcType="VARCHAR" property="hID"/>
+		<result column="order_time" jdbcType="VARCHAR" property="orderTime"/>
+		<result column="order_user" jdbcType="VARCHAR" property="orderUser"/>
+	</resultMap>
+	
+	<resultMap type="com.house.entity.UserOrder" id="UserOrderMapper">
+		<id column="o_id" jdbcType="INTEGER" property="oID" />
+		<result column="h_id" jdbcType="INTEGER" property="hID"/>
+		<result column="order_time" jdbcType="VARCHAR" property="orderTime"/>
+		<result column="order_user" jdbcType="VARCHAR" property="orderUser"/>
+		<result column="house_desc" jdbcType="VARCHAR" property="houseDesc"/>
+		<result column="house_model" jdbcType="VARCHAR" property="houseModel"/>
+		<result column="house_area" jdbcType="VARCHAR" property="houseArea"/>
+		<result column="house_floor" jdbcType="VARCHAR" property="houseFloor"/>
+		<result column="house_type" jdbcType="VARCHAR" property="houseType"/>
+		<result column="house_price" jdbcType="INTEGER" property="housePrice"/>
+		<result column="house_address" jdbcType="INTEGER" property="houseAddress"/>
+		<result column="house_image" jdbcType="INTEGER" property="houseImage"/>
+		<result column="community_name" jdbcType="INTEGER" property="communityName"/>
+		<result column="house_linkman" jdbcType="INTEGER" property="houseLinkMan"/>
+		<result column="house_oriented" jdbcType="INTEGER" property="houseOriented"/>
+	</resultMap>
+	<!-- 添加订单信息 -->
+	<insert id="addOrder" parameterType="com.house.entity.Order">
+		insert into t_order values(0,#{hID},#{uID},NOW(),#{orderUser})
+	</insert>
+	<!-- 查询所有订单信息 -->
+	<select id="findAllOrder" parameterType="com.house.entity.Page" resultMap="UserOrderMapper">
+		select * from t_house h,t_order o where h.h_id=o.h_id and u_id=#{uID} limit #{page},#{limit}
+	</select>
+	<!-- 条件查询不同用户的订单数目 -->
+	<select id="getOrderCount" resultType="int" parameterType="int">
+		select count(o_id) from t_order where u_id=#{uID}
+	</select>
+	<!-- 删除订单 -->
+	<delete id="deleteOrder" parameterType="int">
+		delete from t_order where o_id=#{oID}
+	</delete>
+	
+</mapper>
