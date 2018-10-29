@@ -169,7 +169,7 @@
     </div>
 </section>
 <footer>
-    <p>计算机工程学院Java1607班 毕业设计 蒋石坤 学号：201617380742</p>
+    <p>2018年 毕业设计</p>
 </footer>
 <script>
     layui.use(['element', 'carousel','layer','form'], function () {
