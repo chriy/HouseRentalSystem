@@ -54,7 +54,7 @@
         <iframe src="welcome" width="100%" height="100%" frameborder="0" name="iframe" scrolling="auto" seamless></iframe>
     </div>
     <div class="layui-footer" style="text-align: center;font-size: 16px">
-        <p>计算机工程学院Java1607班 毕业设计 蒋石坤 学号：201617380742</p>
+        <p>2018年 毕业设计</p>
     </div>
 </div>
 <script src="layui/layui.js"></script>
