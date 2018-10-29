@@ -159,7 +159,7 @@
 </section>
 
 <footer>
-    <p>计算机工程学院Java1607班 毕业设计 蒋石坤 学号：201617380742</p>
+    <p>018年 毕业设计</p>
 </footer>
 <div class="layui-container">
     <div class="layui-tab layui-tab-brief" id="sign" lay-filter="" style="display: none;">
