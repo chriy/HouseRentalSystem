@@ -64,8 +64,8 @@
         });
 
         form.on('submit(updatepwd)',function () {
-            var pwd = $("input[name='newpwd']").val();
-            var pwd2 = $("input[name='newpwdagain']").val();
+            var pwd = $("input[name='newPwd']").val();
+            var pwd2 = $("input[name='newPwdAgain']").val();
             if(pwd!=pwd2){
                 layer.msg("两次输入密码密码不一样",{icon:5});
                 $("input[name='newpwdagain']").focus();
