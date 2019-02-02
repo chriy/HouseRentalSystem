@@ -13,7 +13,40 @@
 
 
 
-功能设计：
+
+
+# 部署注意事项：
+
+ 1. 简介图片是通过异步请求的方式进行上传的。需要注意接口是否正确。
+
+ 2. 其余详情图片是通过提交表单的方式进行提交的。
+
+ 3. 文件的上传需要配置虚拟路径。这是图片的存储目录。
+
+    ```java
+    private String dirPath = "D:/upload/";
+    // 简介图片地址
+    private String simplePath = "";
+    // 详细图片地址
+    private StringBuilder detailsPath = new StringBuilder();
+    ```
+
+4. 还有就是需要去tomcat容器中配置虚拟路径映射
+
+   ```xml
+   <Host appBase="webapps" autoDeploy="true" name="localhost" unpackWARs="true">
+   	<!--tomcat conf目录下，修改server.xml-->
+       <!--在 Host标签中添加路径映射-->
+         <Context docBase="D:/upload/" path="/HouseRentalSystem/file"/>
+   </Host>
+   ```
+
+   
+
+---
+
+#### 功能设计：
+
 1. 房屋信息展示
 2. 房屋详情页面展示
 3. 用户登录注册
@@ -24,10 +57,25 @@
 8. 管理员发布房源信息
 9. 管理员管理所有用户信息
 
+---
 
+
+
+
+
+## 以下为部分功能截图
+
+- 首页
 ![image](/WebContent/img/des01.png)
+---
+- 租房信息详情
 ![image](/WebContent/img/des02.png)
+---
+- 个人用户后台
 ![image](/WebContent/img/des03.png)
 ![image](/WebContent/img/des04.png)
+
+---
+- 管理员后台
 ![image](/WebContent/img/des05.png)
 ![image](/WebContent/img/des06.png)
