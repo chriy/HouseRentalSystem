@@ -1,13 +1,12 @@
-<p align="center">
-    <h1>房屋租赁系统</h1>
+<p>
+    <h1 align="center">房屋租赁系统</h1>
 </p>
 
 <p align="center">
-![(jdk-1.8](https://img.shields.io/badge/jdk-1.8-orange)
-![Spring-5.x](https://img.shields.io/badge/spring-5.x-lightgrey) 
-![mybatis-3.x](https://img.shields.io/badge/mybatis-3.x-blue) 
-![license-MIT](https://img.shields.io/badge/license-MIT-brightgreen)  
-
+	<img src="https://img.shields.io/badge/jdk-1.8-orange.svg"/>
+    <img src="https://img.shields.io/badge/spring-5.x-lightgrey.svg"/>
+    <img src="https://img.shields.io/badge/mybatis-3.x-blue.svg"/>
+    <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg"/>
 </p>
 
 ## 简介
@@ -41,12 +40,6 @@
 ## 缩略图
 
 ![](web/img/assets/guide-home.png)
-
-
-
-
-
-
 
 ![](web/img/assets/guide-detail.png)
 
